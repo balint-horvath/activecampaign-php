@@ -1,0 +1,13 @@
+{
+    "name": "balint-horvath/activecampaign-php",
+    "description": "ActiveCampaign PHP Wrapper (PHP 7+, ActiveCampaign API v3+)",
+    "type": "project",
+    "license": "Apache License Version 2.0, January 2004",
+    "authors": [
+        {
+            "name": "Bálint Horváth",
+            "email": "balint@balint.digital"
+        }
+    ],
+    "require": {}
+}
