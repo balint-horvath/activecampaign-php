@@ -5,6 +5,12 @@ Below there are some examples to get you started. For additional examples and ex
 - [ActiveCampaign Website](https://activecampaign.com/)
 - [ActiveCampaign API v3 Official Documentation](https://developers.activecampaign.com/reference)
 
+![](https://img.shields.io/badge/version-0.2.0-yellow.svg)
+![](https://img.shields.io/badge/coverage-10%25-green.svg)
+![](https://img.shields.io/badge/build-failing-red.svg)
+![](https://img.shields.io/badge/php-7.0-blue.svg)
+
+
 # API Wrapper Logic
 The structure is a little bit different than written in the official documentation.
 We've two logical module levels instead of one: Module / Resource.
