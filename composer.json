@@ -9,5 +9,24 @@
             "email": "balint@balint.digital"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "kahlan/kahlan": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BalintHorvath\\ActiveCampaign\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BalintHorvath\\ActiveCampaign\\Spec\\": "spec/"
+        }
+    },
+    "scripts": {
+      "test": "vendor/bin/kahlan"
+    }
 }
