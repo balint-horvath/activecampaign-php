@@ -21,7 +21,6 @@ class Customer extends Resource
     }
 
     public function create(ecomCustomer $customer){
-
     }
 
     public function update(string $id, ecomCustomer $customer){
