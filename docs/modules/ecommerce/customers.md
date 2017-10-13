@@ -7,7 +7,13 @@
 - [About Helper Object]()
 - [Using General Objects]()
 
-# Create a customer
+# `CRUD` Available Functions
+- [`create` Create a customer]()
+- [`read` Retrieve a customer]()
+- [`update` Modify a customer]()
+- [`delete` Remove a customer]()
+
+# `create` Create a customer
 You can either use the built-in helper object `ecomCustomer` or you can simply pass an object or an array.
 
 ## ecomCustomer
@@ -32,3 +38,9 @@ $userCreation = $ActiveCampaign->Ecommerce->Customer->create((object) [
     "email" => "user@example.com"
 ]);
 ```
+
+# `read` Retrieve a customer
+
+# `update` Modify a customer
+
+# `delete` Remove a customer
