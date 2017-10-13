@@ -17,8 +17,20 @@ use BalintHorvath\ActiveCampaign\Object\Skeleton;
 class ecomCustomer extends Skeleton
 {
 
+    public $id;
+
     public $connectionid;
     public $externalid;
     public $email;
+
+    public $totalRevenue;
+    public $totalOrders;
+    public $totalProducts;
+    public $avgRevenuePerOrder;
+    public $avgProductCategory;
+
+    public $links;
+    public $tstamp;
+    public $connection;
 
 }
