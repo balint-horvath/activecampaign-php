@@ -18,6 +18,15 @@ The E-Commerce functions available under Ecommerce module instead of Deep Data g
 `ecomCustomers` → `Ecommerce / Customers`
 
 
+# Credentials
+To be able to use ActiveCampaign API you need the API URL and the API Key belong to your account.
+You can find this information in your account under Settings / Developer, API Access section.
+
+API URL looks like this: `https://{{account}}.api-us1.com` 
+API Key looks like this: `d41d8cd98f00b204e9800998ecf8427ed41d8cd98f00b204e9800998ecf8427ed41d8cd9` 
+
+Settings URL: `https://{{account}}.activehosted.com/admin/main.php?action=settings#tab_api`
+
 # Installation
 
 To install this wrapper, you need to use Composer in your project. If you are not using Composer yet, here's how to install:
