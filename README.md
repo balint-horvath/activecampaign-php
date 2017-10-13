@@ -1,32 +1,66 @@
 # ActiveCampaign PHP Wrapper (under development)
-PHP API client for ActiveCampaign API v3.
-Compatible with PHP 7.0+.
+This is an ActiveCampaign API v3 Wrapper for PHP 7.0+. This PHP SDK contains methods for easily interacting with the ActiveCampaign API.
+Below there are some examples to get you started. For additional examples and explanations, see the [documentation](/docs/).
+
+- [ActiveCampaign Website](https://activecampaign.com/)
+- [ActiveCampaign API v3 Official Documentation](https://developers.activecampaign.com/reference)
+
+# API Wrapper Logic
+The structure is a little bit different than written in the official documentation.
+We've two logical module levels instead of one: Module / Resource.
+(To organize resources into logical groups.)
+
+`deals` → `Deals / Deals`
+
+The E-Commerce functions available under Ecommerce module instead of Deep Data group.
+(To be more trivial and to prepare for more resources in the future, like products.) 
+
+`ecomCustomers` → `Ecommerce / Customers`
+
 
 # Installation
 
+To install this wrapper, you need to use Composer in your project. If you are not using Composer yet, here's how to install:
+
+```bash
+curl -sS https://getcomposer.org/installer | php
+```
+
 ## via Composer
+
 ```bash
 composer require balint-horvath/activecampaign-php
 ```
 
-## Dependencies
-- PHP7 (php>=7.0)
-- Guzzle HTTP 6 (guzzlehttp/guzzle/~6.0)
+### Phar
+```bash
+php composer.phar require balint-horvath/activecampaign-php
+```
 
 # Basic Usage
 
+You should always use the autoloader of Composer in your application to automatically load the your dependencies.
+All examples assumes you've already have included in your file:
+
+```php
+require 'vendor/autoload.php';
+use BalintHorvath\ActiveCampaign;
+```
+
+### Instance
 Creating a new instance with API URL and Key.
 Later we'll refer for it as `$ActiveCampaign` in the examples.
 
 ```php
-$ActiveCampaign = new BalintHorvath\ActiveCampaign\ActiveCampaign("{{URL}}", "{{KEY}}");
+$ActiveCampaign = new ActiveCampaign("{{URL}}", "{{KEY}}");
 ```
 
-Use:
+### Usage
 ```php
 use BalintHorvath\ActiveCampaign\ActiveCampaign;
 ```
 
+### Aliasing
 Using inside a class under different access name:
 ```php
 use BalintHorvath\ActiveCampaign\ActiveCampaign as ActiveCampaignWrapper;
@@ -43,9 +77,9 @@ class ActiveCampaign
 
 ## Using Modules
 
-In general, calls on modules look like this:
+In general, calls on resources look like this:
 ```php
-$ActiveCampaign->{ModuleGroup}->{Module}->{Method}($id, $properties);
+$ActiveCampaign->{Module}->{Resource}->{Method}($id, $properties);
 ```
 
 For example:
@@ -61,10 +95,16 @@ $ActiveCampaign = new ActiveCampaignWrapper("{{URL}}", "{{KEY}}");
 $customerID = $ActiveCampaign->Ecommerce->Customer->get($id);
 ```
 
+## Dependencies
+- [PHP 7 (php:>=7.0)](http://php.net/)
+- [Guzzle 6 (guzzlehttp/guzzle:~6.0)](http://docs.guzzlephp.org/en/stable/)
 
 
-# Testing
-This package has included test cases for Kahlan.
+## Developer Dependencies
+- [Kahlan 4 (kahlan/kahlan:^4.0)]((https://kahlan.github.io/docs/))
+
+# Unit & BDD Test
+This package has included test cases for [Kahlan](https://kahlan.github.io/docs/).
 
 
 # PSR
