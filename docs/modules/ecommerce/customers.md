@@ -2,6 +2,7 @@
 
 **Helper Object:** `ecomCustomer`
 **Resource:** `ecomCustomers`
+**Reference:** [#customers](https://developers.activecampaign.com/reference#customers)
 
 - [About Helper Object]()
 - [Using General Objects]()
