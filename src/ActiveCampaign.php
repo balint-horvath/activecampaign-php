@@ -6,6 +6,7 @@ use BalintHorvath\ActiveCampaign\Exception\AboveTheLimitException;
 use BalintHorvath\ActiveCampaign\Exception\BelowTheLimitException;
 use BalintHorvath\ActiveCampaign\Exception\UnallowedInLowMemoryModeException;
 use BalintHorvath\ActiveCampaign\Exception\UnallowedMethodException;
+use BalintHorvath\ActiveCampaign\Module\Ecommerce;
 use GuzzleHttp\Client;
 
 class ActiveCampaign
@@ -34,6 +35,11 @@ class ActiveCampaign
     private $wrapperVersion = "0.1.0";
 
     /**
+     * @var Ecommerce Ecommerce Module
+     */
+    public $Ecommerce;
+
+    /**
      * ActiveCampaign constructor.
      * @param string $url API Access URL belongs to the account
      * @param string $key API Access Key belongs to the account
@@ -42,8 +48,19 @@ class ActiveCampaign
     {
         $this->setURL($url);
         $this->setKey($key);
-        $this->pagination = new \stdClass();
+        $this->initVariables();
+        $this->initModules();
         return($this);
+    }
+
+    public function initVariables(){
+        $this->pagination = new \stdClass();
+        $this->pagination->limit = null;
+        $this->pagination->offset = null;
+    }
+
+    public function initModules(){
+        $this->Ecommerce = new Ecommerce($this);
     }
 
     /**

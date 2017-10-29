@@ -2,7 +2,7 @@
 
 namespace BalintHorvath\ActiveCampaign\Object\Ecommerce;
 
-use BalintHorvath\ActiveCampaign\Object\Skeleton;
+use BalintHorvath\ActiveCampaign\Object\HelperObject;
 
 /*** Schema
 {
@@ -14,7 +14,7 @@ use BalintHorvath\ActiveCampaign\Object\Skeleton;
 }
  ***/
 
-class ecomCustomer extends Skeleton
+class Customer extends HelperObject
 {
 
     public $id;

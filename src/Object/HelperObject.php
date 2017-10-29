@@ -2,7 +2,7 @@
 
 namespace BalintHorvath\ActiveCampaign\Object;
 
-abstract class Skeleton
+abstract class HelperObject extends \ArrayObject
 {
 
     protected $_schema;
@@ -50,6 +50,21 @@ abstract class Skeleton
     public function __fromJSON(string $json)
     {
         $this->_data = \GuzzleHttp\json_decode($json);
+    }
+
+    public function serialize()
+    {
+        return $this->__toJSON($this->_data);
+    }
+
+    public function unserialize($serialized)
+    {
+        $this->_data = $this->__fromJSON($serialized);
+    }
+
+    public function count()
+    {
+        return count($this->_data);
     }
 
 }
